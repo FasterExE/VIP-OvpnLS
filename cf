@@ -48,5 +48,6 @@ touch domain
 touch flare-domain
 echo "$WS_DOMAIN" >> domain
 echo "$FLARE_DOMAIN" >> flare-domain
+cd
 rm -rf cf
 sleep 1
