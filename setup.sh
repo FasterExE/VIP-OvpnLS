@@ -92,7 +92,7 @@ check_vz() {
     fi
 }
 
-REPO="http://onlinedersm.xyz/"
+REPO="https://github.com/FasterExE/VIP-OvpnLS/raw/main/"
 
 function make_folder_xray() {
     rm -rf /etc/vmess/.vmess.db
@@ -127,19 +127,7 @@ function make_folder_xray() {
 }
 
 function add_domain() {
-    read -p "Input Domain :  " domain
-    if [[ ${domain} ]]; then
-        echo $domain >/etc/xray/domain
-    else
-        echo -e " ${RED}Please input your Domain${FONT}"
-        echo -e ""
-        echo -e " Start again in 5 seconds"
-        echo -e ""
-        sleep 5
-        
-        rm -rf setup.sh
-        exit 1
-    fi
+wget ${REPO}cf
 }
 
 function is_root() {
