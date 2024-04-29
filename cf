@@ -41,13 +41,8 @@ RECORD=$(curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_
 --data '{"type":"CNAME","name":"'${FLARE_DOMAIN}'","content":"'${WS_DOMAIN}'","ttl":120,"proxied":true}' | jq -r .result.id)
 #end-flare
 
-echo "Host WS : $WS_DOMAIN"
-echo "Host FLARE: $FLARE_DOMAIN"
-cd /etc/xray
-touch domain
-touch flare-domain
-echo "$WS_DOMAIN" >> domain
-echo "$FLARE_DOMAIN" >> flare-domain
+echo $WS_DOMAIN >/etc/xray/domain
+echo $FLARE_DOMAIN >/etc/xray/flare-domain
 cd
 rm -rf cf
 sleep 1
