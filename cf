@@ -1,9 +1,10 @@
 #!/bin/bash
 #random
 apt install jq curl -y
-rm -rf /root/xray/scdomain
-rm -rf /root/xray/flare-domain
-rm -rf /root/xray/flare-domain
+rm -rf /etc/xray/domain
+rm -rf /etc/xray/flare-domain
+touch /etc/xray/domain
+touch /etc/xray/flare-domain
 mkdir -p /root/xray
 clear
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c5)
@@ -44,7 +45,7 @@ RECORD=$(curl -sLX POST "https://api.cloudflare.com/client/v4/zones/${ZONE}/dns_
 
 echo "Host WS : $WS_DOMAIN"
 echo "Host FLARE: $FLARE_DOMAIN"
-echo "$WS_DOMAIN" >> /root/xray/flare-domain
-echo "$FLARE_DOMAIN" >> /root/xray/flare-domain
+echo "$WS_DOMAIN" >> /etc/xray/domain
+echo "$FLARE_DOMAIN" >> /etc/xray/flare-domain
 rm -rf cf
 sleep 1
