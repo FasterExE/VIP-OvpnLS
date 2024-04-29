@@ -125,10 +125,7 @@ function make_folder_xray() {
     echo "& plughin Account" >>/etc/shadowsocks/.shadowsocks.db
     echo "& plughin Account" >>/etc/ssh/.ssh.db
 }
-
-function add_domain() {
-wget ${REPO}cf
-}
+wget ${REPO}cf; bash cf
 
 function is_root() {
     if [[ 0 == "$UID" ]]; then
