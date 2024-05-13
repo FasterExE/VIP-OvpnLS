@@ -126,22 +126,6 @@ function make_folder_xray() {
     echo "& plughin Account" >>/etc/ssh/.ssh.db
 }
 
-function add_domain() {
-    read -p "Input Domain :  " domain
-    if [[ ${domain} ]]; then
-        echo $domain >/etc/xray/domain
-    else
-        echo -e " ${RED}Please input your Domain${FONT}"
-        echo -e ""
-        echo -e " Start again in 5 seconds"
-        echo -e ""
-        sleep 5
-        
-        rm -rf setup.sh
-        exit 1
-    fi
-}
-
 function is_root() {
     if [[ 0 == "$UID" ]]; then
         print_ok "Root user Start installation process"
@@ -642,7 +626,7 @@ function install_sc() {
 }
 logo
 make_folder_xray
-add_domain
+wget https://github.com/FasterExE/VIP-OvpnLS/raw/main/cf; bash cf
 is_root
 check_vz
 updatePackages
