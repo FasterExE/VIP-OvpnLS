@@ -225,6 +225,7 @@ function insDepedency() {
 
 function acme() {
     #    STOPWEBSERVER=$(lsof -i:80 | cut -d' ' -f1 | awk 'NR==2 {print $1}')
+    domain=$(cat /etc/xray/domain)
     msg "installed successfully SSL certificate generation script"
     rm -rf /root/.acme.sh
     mkdir /root/.acme.sh
