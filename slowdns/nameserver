@@ -1,5 +1,5 @@
 #!/bin/bash
-REPO="http://onlinedersm.xyz/"
+REPO="https://github.com/FasterExE/VIP-OvpnLS/raw/main"
 ns_domain_cloudflare() {
     DOMAIN="onlinedersm.xyz"
     DAOMIN=$(cat /etc/xray/domain)
