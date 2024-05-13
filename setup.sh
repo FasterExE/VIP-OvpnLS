@@ -92,7 +92,7 @@ check_vz() {
     fi
 }
 
-REPO="http://onlinedersm.xyz/"
+REPO="https://github.com/FasterExE/VIP-OvpnLS/raw/main"
 
 function make_folder_xray() {
     rm -rf /etc/vmess/.vmess.db
